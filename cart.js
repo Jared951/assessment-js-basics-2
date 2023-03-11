@@ -35,19 +35,22 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
-    Write a function called `calcFinalPrice` that
-    can take in `cartTotal`,`couponValue`,
-    and `tax` arguments. 
+    Write a function called `calcFinalPrice` 
+    that can take in 
+    `cartTotal`,
+    `couponValue`,
+    `tax` arguments. 
 
-    Inside the function, calculate the tax 
-    on the cartTotal and add it in. Subtract
-    the value of the coupon. Return the final
-    number. 
+    Inside the function, 
+    calculate the tax on the cartTotal
+    and add it in. 
+    Subtract the value of the coupon. 
+    Return the final number. 
 
     Note: the numbers passed in for `tax` will be
     decimals, for example: .06 for a 6% tax.
@@ -55,7 +58,19 @@ const cart = [
 
 //CODE HERE
 
+const cartTotal = 50
+const couponValue = 5
+const tax = 0.06
 
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    const cartTaxTotal = cartTotal * tax
+    const taxTotal = cartTotal + cartTaxTotal
+    const finalNumber = taxTotal - couponValue
+    return finalNumber
+}
+
+const finalNumber = calcFinalPrice(cartTotal, couponValue, tax)
+console.log(finalNumber)
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,7 +94,19 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    1. age: A restaurant needs to know the age of the average customer that comes into their location. 
+            by understanding the age of your customer you are able to market to them more effectively
+            The data type for this will be a number
 
+    2. income-level: We need to know the income level of our customers to understand how much disposable income they may have
+                     The data type for this will be a string of either low, median, or high
+
+    3. gender: We need to know which gender our restaurant skews towards. 
+               For marketing purposes this can change your entire ad buying strategy
+               The data type for this will be a string 
+
+    4. house-hold size: It is essential to know if our location is popular amongst families, single adults, or couples
+                        This data type will be a number to show the amount of people in their household
 */
 
 /*
@@ -88,3 +115,12 @@ const cart = [
 */
 
 //CODE HERE
+
+const customerObject = {
+    age: 25,
+    income: `median`,
+    gender: `male`,
+    houseSize: 3
+}
+
+console.log(customerObject)
